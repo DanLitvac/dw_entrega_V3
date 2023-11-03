@@ -8,7 +8,7 @@ class CreatureDAO{
         $this->conn = PersistentManager::getInstance()->get_connection();
     }
     public function selectAll(){
-        $query = "SELECT * FROM" . CreatureDAO::CREATURE_TABLE;
+        $query = "SELECT * FROM " . CreatureDAO::CREATURE_TABLE;
         $result = mysqli_query($this->conn, $query);
         $creatures = array();
 
@@ -29,10 +29,9 @@ class CreatureDAO{
 
     public function insert($creature) {
         $query = "INSERT INTO " . OfferDAO::OFFER_TABLE .
-            " (idCreature , name , description ,avatar , attackPower , lifeLevel ,weapon) VALUES(?,?,?,?,?,?,?)";
+            " (idCreature , name , description ,avatar , attackPower , lifeLevel ,weapon) VALUES(?,?,?,?,?,?)";
         $stmt = mysqli_prepare($this->conn, $query);
 
-        $idCreature = $creature->getIdCreature();
         $name  = $creature->getName();
         $description =$creature->getDescription();
         $avatar =$creature->getAvatar();
