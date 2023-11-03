@@ -19,7 +19,7 @@ class CreatureDAO{
             $creature->setName($creatureDB["name"]);
             $creature->setDescription($creatureDB["description"]);
             $creature->setAvatar($creatureDB["avatar"]);
-            $creature->setAttackPower($creatureDB["atackPower"]);
+            $creature->setAttackPower($creatureDB["attackPower"]);
             $creature->setLifeLevel($creatureDB["lifeLevel"]);
             $creature->setWeapon($creatureDB["weapon"]);
             array_push($creatures, $creature);
@@ -28,19 +28,18 @@ class CreatureDAO{
     }
 
     public function insert($creature) {
-        $query = "INSERT INTO " . OfferDAO::OFFER_TABLE .
-            " (idCreature , name , description ,avatar , attackPower , lifeLevel ,weapon) VALUES(?,?,?,?,?,?)";
+        $query = "INSERT INTO " . CreatureDAO::CREATURE_TABLE .
+            " (name, description, avatar, attackPower, lifeLevel, weapon) VALUES(?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($this->conn, $query);
 
-        $name  = $creature->getName();
-        $description =$creature->getDescription();
-        $avatar =$creature->getAvatar();
-        $attackPower =$creature->getAttackPower();
-        $lifeLevel =$creature->getLifeLevel();
+        $name = $creature->getName();
+        $description = $creature->getDescription();
+        $avatar = $creature->getAvatar();
+        $attackPower = $creature->getAttackPower();
+        $lifeLevel = $creature->getLifeLevel();
         $weapon = $creature->getWeapon();
 
-
-        mysqli_stmt_bind_param($stmt, 'isssiis', $idCreature , $name , $description ,$avatar , $attackPower , $lifeLevel ,$weapon);
+        mysqli_stmt_bind_param($stmt, 'sssiis', $name, $description, $avatar, $attackPower, $lifeLevel, $weapon);
         return $stmt->execute();
     }
 
@@ -85,7 +84,7 @@ class CreatureDAO{
     }
 
     public function delete($idCreature) {
-        $query = "DELETE FROM " . CreatureDAO::CREATURE_TABLE . " WHERE id =?";
+        $query = "DELETE FROM " . CreatureDAO::CREATURE_TABLE . " WHERE idCreature=?";
         $stmt = mysqli_prepare($this->conn, $query);
         mysqli_stmt_bind_param($stmt, 'i', $idCreature);
         return $stmt->execute();

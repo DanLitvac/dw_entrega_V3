@@ -79,23 +79,23 @@ class Creature {
         $this->weapon = $weapon;
     }
 
-     function creature2HTML() {
-        $result = '<div class=" col-md-4 ">';
-         $result .= '<div class="card ">';
-          $result .= ' <img class="card-img-top rounded mx-auto d-block email" src='.$this->getEmail().' alt="Card image cap">';
-            $result .= '<div class="card-block">';
-                $result .= '<h2 class="card-title">' . $this->getName() . '</h2>';
-                $result .= '<p class=" card-text description">'.$this->getSurname().'</p>';                    
-             $result .= '</div>';
-             $result .= ' <div  class=" btn-group card-footer" role="group">';
-                $result .= '<a type="button" class="btn btn-secondary" href="app/views/detail.php?id='.$this->getIdCreature().'">Detalles</a>';
-                $result .= '<a type="button" class="btn btn-success" href="app/views/edit.php?id='.$this->getIdCreature().'">Modificar</a> ';
-                $result .= '<a type="button" class="btn btn-danger" href="app/controllers/deleteController.php?id='.$this->getIdCreature().'">Borrar</a> ';
-            $result .= ' </div>';
-         $result .= '</div>';
-     $result .= '</div>';
-        
-        
+    function creature2HTML() {
+        $result = '<div class="col-md-4">';
+        $result .= '<div class="card">';
+        $result .= '<img class="card-img-top rounded mx-auto d-block email" src='.$this->getAvatar().' alt="Card image cap"></img>';
+        $result .= '<div class="card-block">';
+        $result .= '<h2 class="card-title">' . $this->getName() . '</h2>';
+        $result .= '<p class="card-text description">'.$this->getDescription().'</p>';
+        $result .= '</div>';
+        $result .= '<div class="btn-group card-footer" role="group">';
+        $result .= '<a type="button" class="btn btn-secondary" href="app/views/detail.php?id='.$this->getIdCreature().'">Detalles</a>';
+        $result .= '<a type="button" class="btn btn-success" href="app/views/edit.php?id='.$this->getIdCreature().'">Modificar</a> ';
+        $result .= '<a type="button" class="btn btn-danger" href="app/controllers/deleteController.php?id='.$this->getIdCreature().'">Borrar</a> ';
+        $result .= '</div>';
+        $result .= '</div>';
+        $result .= '</div>';
+
         return $result;
     }
+
 }

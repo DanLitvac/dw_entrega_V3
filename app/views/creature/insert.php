@@ -52,11 +52,12 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="email" class="col-sm-2 control-label">Attack Power</label>
+                    <label for="attackPower" class="col-sm-2 control-label">Attack Power</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="atackPower" name="atackPower" placeholder="Attack Power" value="">
+                        <input type="text" class="form-control" id="attackPower" name="attackPower" placeholder="Attack Power" value="">
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="email" class="col-sm-2 control-label">Life Level</label>
                     <div class="col-sm-10">

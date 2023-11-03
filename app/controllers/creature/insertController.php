@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Función encargada de crear nuevas ofertas
 function createAction() {
     // Obtención de los valores del formulario y validación
-    $idCreature = ValidationsRules::test_input($_POST["idCreature"]);
+
     $name = ValidationsRules::test_input($_POST["name"]);
     $description = ValidationsRules::test_input($_POST["description"]);
     $avatar = ValidationsRules::test_input($_POST["avatar"]);
@@ -24,7 +24,7 @@ function createAction() {
     $weapon = ValidationsRules::test_input($_POST["weapon"]);
     // Creación de objeto auxiliar
     $creature = new Creature();
-    $creature->setIdCreature($idCreature);
+
     $creature->setName($name);
     $creature->setDescription($description);
     $creature->setAvatar($avatar);
