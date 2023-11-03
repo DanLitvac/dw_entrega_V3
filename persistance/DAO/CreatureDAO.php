@@ -49,8 +49,8 @@ class CreatureDAO{
         mysqli_stmt_bind_param($stmt, 'i', $idCreature);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_bind_result($stmt, $idCreature , $name , $description ,$avatar , $attackPower , $lifeLevel ,$weapon);
-
         $creature = new Creature();
+
         while (mysqli_stmt_fetch($stmt)) {
             $creature->setIdCreature($idCreature);
             $creature->setName($name);

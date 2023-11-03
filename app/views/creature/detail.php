@@ -3,10 +3,10 @@ require_once(dirname(__FILE__) . '/../../../persistance/DAO/CreatureDAO.php');
 require_once(dirname(__FILE__) . '/../../../app/models/Creature.php');
 
 if (isset($_GET["id"])) {
-    $id = $_GET["id"];
+    $idCreature = $_GET["id"];
 
     $creatureDAO = new CreatureDAO();
-    $creature = $creatureDAO->selectById($id);
+    $creature = $creatureDAO->selectById($idCreature);
 }
 ?>
 
@@ -30,12 +30,11 @@ if (isset($_GET["id"])) {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="app/views/insert.php">Agregar una Creature</a>
+                <a class="nav-link" href="/app/views/creature/insert.php">Agregar una Creature</a>
             </li>
         </ul>
     </div>
 </nav>
-
 <div class="container">
     <div class="card">
         <img class="card-img-top rounded mx-auto d-block avatar" src='<?php echo $creature->getAvatar() ?>' alt="Card image cap">
@@ -44,7 +43,7 @@ if (isset($_GET["id"])) {
             <p class="card-text description"> <?php echo $creature->getDescription() ?></p>
         </div>
         <div class="btn-group card-footer" role="group">
-            <a type="button" class="btn btn-success" href="edit.php?id=<?php echo $creature->getId() ?>">Modificar</a>
+            <a type="button" class="btn btn-success" href="edit.php?id=<?php echo $creature->getIdCreature() ?>">Modificar</a>
             <a type="button" class="btn btn-danger" href="../../controllers/creature/deleteController.php?id=<?php echo $creature->getIdCreature() ?>">Borrar</a>
         </div>
     </div>

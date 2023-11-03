@@ -2,8 +2,8 @@
 require_once(dirname(__FILE__) . '/../../../persistance/DAO/CreatureDAO.php');
 require_once(dirname(__FILE__) . '/../../../app/models/Creature.php');
 
-if (isset($_GET["idCreature"])) {
-    $idCreature = $_GET["idCreature"];
+if (isset($_GET["id"])) {
+    $idCreature = $_GET["id"];
 
     $creatureDAO = new CreatureDAO();
     $creature = $creatureDAO->selectById($idCreature);
@@ -60,9 +60,10 @@ if (isset($_GET["idCreature"])) {
         <div class="form-group">
             <label for="atackPower" class="col-sm-2 control-label">Attack Power</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="atackPower" name="atackPower" placeholder="Attack Power" value="<?php echo $creature->getAttackPower(); ?>">
+                <input type="text" class="form-control" id="attackPower" name="attackPower" placeholder="Attack Power" value="<?php echo $creature->getAttackPower(); ?>">
             </div>
         </div>
+
         <div class="form-group">
             <label for="lifeLevel" class="col-sm-2 control-label">Life Level</label>
             <div class="col-sm-10">

@@ -31,7 +31,7 @@ $creatures = indexAction();
                         <a  class="nav-link " href=#>Logo</a>
                     </li>
                     <li class="nav-item">
-                        <a  class="nav-link " href="crearCriatura.php">Crear Criatura</a>
+                        <a  class="nav-link " href="./app/views/creature/insert.php">Crear Criatura</a>
                     </li>
 
                 </ul>
