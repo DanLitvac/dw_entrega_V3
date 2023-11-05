@@ -12,7 +12,7 @@ $creatures = indexAction();
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Artean</title>
+        <title>RolePlay</title>
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
 
@@ -50,7 +50,7 @@ $creatures = indexAction();
                     <h1>Comunidad de usuarios de heroes</h1>
                     <p class="lead">La aventura empieza aqui en tu ordenador. </p>
                         <p class="lead">
-                            <a href="user/signup.php" class="btn btn-lg btn-success-outline">Juega Ahora</a>
+                            <a href="./app/views/creature/insert.php" class="btn btn-lg btn-success-outline">Juega Ahora</a>
                         </p>
                 </div>
             </div>

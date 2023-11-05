@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Función encargada de crear nuevas ofertas
 function editAction() {
     // Obtención de los valores del formulario y validación    
-    $idCreature = $_POST["idCreature"];
     $name = $_POST["name"];
     $description = $_POST["description"];
     $avatar = $_POST["avatar"];
